@@ -1,0 +1,44 @@
+.animals-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    
+  }
+
+  .animal-item {
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f9f9f9;
+    color: #1e1e1e;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+
+    .animal-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .animal-warning {
+      font-weight: bold;
+      margin-top: 0.5rem;
+      &.urgent {
+        color: red;
+      }
+      &.soon {
+        color: orange;
+      }
+    }
+  }
+}

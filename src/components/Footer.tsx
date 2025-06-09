@@ -1,7 +1,9 @@
+import "./scss/Footer.scss";
+
 const Footer = () => {
   return (
     <footer>
-      <div className="footer-container">
+      <div className="wrapper">
         <p>
           © {new Date().getFullYear()} Your Company Name. All rights reserved.
         </p>

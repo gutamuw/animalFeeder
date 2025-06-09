@@ -1,10 +1,14 @@
 import NavMenu from "./NavMenu";
+import "./scss/Header.scss";
 
 const Header = () => {
   return (
     <header>
-      <div className="logo">The Zoo</div>
-      <NavMenu />
+      <div className="header-container wrapper">
+        <div className="logo">The Zoo</div>
+
+        <NavMenu />
+      </div>
     </header>
   );
 };

@@ -1,5 +1,8 @@
 import { useContext } from "react";
 import { AnimalsContext } from "../contexts/AnimalsContext";
+import { hoursSinceFed } from "../utils/hoursSinceFed";
+import "./scss/Animals.scss";
+import AnimalCard from "../components/AnimalCard";
 
 const Animals = () => {
   const { animals } = useContext(AnimalsContext);
@@ -7,12 +10,11 @@ const Animals = () => {
   if (!animals) return;
 
   return (
-    <div>
-      <h1>Animals</h1>
-      <p>List of animals will be displayed here.</p>
-      <ul>
+    <div className="wrapper">
+      <h1>Djur</h1>
+      <ul className="animals-list">
         {animals.map((animal) => (
-          <li key={animal.id}>{animal.name}</li>
+          <AnimalCard key={animal.id} animal={animal} />
         ))}
       </ul>
     </div>
