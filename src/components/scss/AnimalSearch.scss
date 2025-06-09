@@ -1,0 +1,38 @@
+.animal-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+
+  .search-input-wrapper {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+  }
+
+  input[type="text"] {
+    color: #1e1e1e;
+    width: 100%;
+    padding: 10px 44px 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+  }
+
+  .search-button {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 8px 0;
+    color: #ccc;
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+}

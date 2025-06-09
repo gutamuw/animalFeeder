@@ -1,44 +1,34 @@
+.animals-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  padding: 6rem;
+  margin-bottom: 1rem;
+  background: url("https://images.pexels.com/photos/1250260/pexels-photo-1250260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.animals-hero h1 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
 .animals-list {
-  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
+}
 
-  @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
+  .animals-list {
     grid-template-columns: 1fr 1fr;
-    
   }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
+  .animals-list {
     grid-template-columns: 1fr;
-    
-  }
-
-  .animal-item {
-    padding: 1rem;
-    border-radius: 8px;
-    background: #f9f9f9;
-    color: #1e1e1e;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-
-    .animal-img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 4px;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .animal-warning {
-      font-weight: bold;
-      margin-top: 0.5rem;
-      &.urgent {
-        color: red;
-      }
-      &.soon {
-        color: orange;
-      }
-    }
   }
 }
