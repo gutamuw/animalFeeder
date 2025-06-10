@@ -1,0 +1,61 @@
+button.primary,
+.feed-btn.primary,
+button.secondary,
+.feed-btn.secondary {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.2rem 0.7rem 2rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(44, 62, 39, 0.12);
+  font-family: "poppins", sans-serif;
+
+  svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    margin-bottom: 0.1rem;
+  }
+}
+
+button.primary,
+.feed-btn.primary {
+  background: #54ca84;
+  color: #fffbe9;
+
+  &:hover,
+  &:focus {
+    background: #32ac64;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(44, 62, 39, 0.18);
+  }
+}
+
+button.secondary,
+.feed-btn.secondary {
+  background: #fff;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(44, 62, 39, 0.08);
+
+  &:hover,
+  &:focus {
+    background: #e0e0e0;
+    color: #1e1e1e;
+    box-shadow: 0 4px 16px rgba(44, 62, 39, 0.18);
+  }
+}
+
+.feed-btn:disabled,
+.feed-btn.disabled {
+  background: #ccc !important;
+  color: #888 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  border: none;
+  pointer-events: none;
+  transition: none;
+}

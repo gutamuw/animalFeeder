@@ -1,13 +1,15 @@
+.animal-link {
+  text-decoration: none;
+}
+
 .animal-item {
+  height: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
+
   min-height: 640px;
-  width: 100%;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
-  background: #222;
   color: #fff;
   transition: transform 0.2s;
   cursor: pointer;
@@ -36,13 +38,7 @@
     position: relative;
     z-index: 2;
     padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-    background: linear-gradient(
-      0deg,
-      rgba(44, 62, 39, 1) 0%,
-      rgba(107, 142, 85, 1) 45%,
-      rgba(107, 142, 85, 0.15) 85%,
-      rgba(107, 142, 85, 0) 100%
-    );
+    background: linear-gradient(0deg, #1e1e1e, #1e1e1e, #1e1e1e80, #1e1e1e00);
   }
 
   h2 {
@@ -59,6 +55,10 @@
       font-size: 1.5rem;
       margin-right: 0.5rem;
     }
+  }
+
+  .animal-fed {
+    margin-top: 1rem;
   }
 
   .animal-status {
@@ -109,32 +109,6 @@
       }
     }
   }
-
-  .animal-link {
-    display: inline-block;
-    margin-top: 0.7rem;
-    padding: 0.5rem 1.2rem;
-    background: #6b8e55;
-    color: #fffbe9;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(44, 62, 39, 0.1);
-    border: none;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-
-    &:hover,
-    &:focus {
-      background: #4e6b3c;
-      color: #fff;
-      outline: 2px solid #c2b280;
-      box-shadow: 0 4px 16px rgba(44, 62, 39, 0.18);
-      text-decoration: none;
-    }
-  }
-
   p {
     margin: 0.2rem 0;
     font-size: 1.05rem;

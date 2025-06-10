@@ -21,50 +21,42 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
   }
 
   return (
-    <li className="animal-item">
-      <img
-        src={animal.imageUrl}
-        alt={animal.name}
-        className="animal-img"
-        onError={(e) => {
-          e.currentTarget.src =
-            "https://images.pexels.com/photos/39857/leopard-leopard-spots-animal-wild-39857.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
-        }}
-      />
-      <div className="animal-content">
-        <h2>{animal.name}</h2>
-        <p>
-          <strong>Födelseår:</strong> {animal.yearOfBirth}
-        </p>
-        <p>
-          <strong>Beskrivning:</strong> {animal.shortDescription}
-        </p>
-        <p className={`animal-status ${animal.isFed ? "Fed" : "Hungrig"}`}>
-          {animal.isFed ? "Mätt" : "Hungrig"}
-        </p>
-        <p className="animal-fed">
-          <FaRegCalendarAlt style={{ marginRight: "0.4em" }} />
-          {new Date(animal.lastFed).toLocaleString("sv-SE", {
-            year: "numeric",
-            month: "2-digit",
-            day: "2-digit",
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: false,
-          })}
-        </p>
-        {warning && (
-          <p className={`animal-warning ${warningClass}`}>{warning}</p>
-        )}
-        <Link
-          to={`/animals/${animal.id}`}
-          className="animal-link"
-          title={`View details for ${animal.name}`}
-        >
-          Visa detaljer för {animal.name}
-        </Link>
-      </div>
-    </li>
+    <Link to={`/animals/${animal.id}`} className="animal-link">
+      <li className="animal-item">
+        <img
+          src={animal.imageUrl}
+          alt={animal.name}
+          className="animal-img"
+          onError={(e) => {
+            e.currentTarget.src =
+              "https://skuss.se/wp-content/uploads/2019/04/Bild-saknas-9.jpg";
+          }}
+        />
+        <div className="animal-content">
+          <h2>{animal.name}</h2>
+          <p>
+            <strong>Beskrivning:</strong> {animal.shortDescription}
+          </p>
+          <p className={`animal-status ${animal.isFed ? "Fed" : "Hungrig"}`}>
+            {animal.isFed ? "Mätt" : "Hungrig"}
+          </p>
+          <p className="animal-fed">
+            <FaRegCalendarAlt style={{ marginRight: "0.4em" }} />
+            {new Date(animal.lastFed).toLocaleString("sv-SE", {
+              year: "numeric",
+              month: "2-digit",
+              day: "2-digit",
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false,
+            })}
+          </p>
+          {warning && (
+            <p className={`animal-warning ${warningClass}`}>{warning}</p>
+          )}
+        </div>
+      </li>
+    </Link>
   );
 };
 

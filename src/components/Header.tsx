@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <div className="header-container wrapper">
-        <div className="logo">The Zoo</div>
+        <div className="logo">Djurappen.oi</div>
 
         <NavMenu />
       </div>

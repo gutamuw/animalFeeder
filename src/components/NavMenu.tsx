@@ -5,10 +5,10 @@ const NavMenu = () => {
     <nav>
       <ul>
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Hem</NavLink>
         </li>
         <li>
-          <NavLink to="/animals">Animals</NavLink>
+          <NavLink to="/animals">Mata djur</NavLink>
         </li>
       </ul>
     </nav>

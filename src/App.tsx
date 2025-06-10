@@ -2,24 +2,26 @@ import "./App.css";
 import { RouterProvider } from "react-router";
 import Router from "./routes/Routes";
 import { AnimalsContext } from "./contexts/AnimalsContext";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { getAnimals } from "./services/animalsService";
-import type { IAnimal } from "./models/IAnimal";
+import { ActionTypes, AnimalReducer } from "./reducers/animalReducer";
 
 function App() {
-  const [animals, setAnimals] = useState<IAnimal[]>([]); //Should be repalced with reducer later
+  const [animals, dispatch] = useReducer(AnimalReducer, []);
 
   useEffect(() => {
     const getData = async () => {
       const data = await getAnimals();
-      console.log("Fetched animals:", data);
-      setAnimals(data);
+      dispatch({
+        type: ActionTypes.LOADED,
+        payload: JSON.stringify(data),
+      });
     };
     getData();
   }, []);
 
   return (
-    <AnimalsContext.Provider value={{ animals }}>
+    <AnimalsContext.Provider value={{ animals, dispatch }}>
       <RouterProvider router={Router} />
     </AnimalsContext.Provider>
   );

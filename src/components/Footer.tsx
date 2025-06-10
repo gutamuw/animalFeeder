@@ -3,12 +3,10 @@ import "./scss/Footer.scss";
 const Footer = () => {
   return (
     <footer>
-      <div className="wrapper">
+      <div>
+        <p>© {new Date().getFullYear()} Djurappen. Alla rättigheter.</p>
         <p>
-          © {new Date().getFullYear()} Your Company Name. All rights reserved.
-        </p>
-        <p>
-          Powered by <a href="https://reactjs.org">React</a>
+          Skapad av <a href="https://elverskog.netlify.app">Ludvig Elverskog</a>
         </p>
       </div>
     </footer>

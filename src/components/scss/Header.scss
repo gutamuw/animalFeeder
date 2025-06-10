@@ -1,17 +1,35 @@
-.header-container {
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 2rem;
+
+    .logo {
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5rem;
+      font-family: "Poppins", sans-serif;
+    }
 
     nav {
-        ul {
-            display: flex;
-            list-style: none;
-            gap: 1rem;
-            li {
-                a {}
-            }
+      ul {
+        display: flex;
+        list-style: none;
+        gap: 1rem;
+        li {
+          a {
+            color: white;
+            text-decoration: none;
+          }
         }
+      }
     }
+  }
 }
