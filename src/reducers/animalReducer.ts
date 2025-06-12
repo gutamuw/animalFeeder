@@ -21,9 +21,9 @@ export const AnimalReducer = (
     case ActionTypes.FED:
       return animals.map((animal) =>
         animal.id === +action.payload
-          ? { ...animal, isFed: true, lastFed: new Date().toISOString() }
+          ? { ...animal, lastFed: new Date().toISOString() }
           : animal
-      ); //tack Ymer för tipset om ternary operator
+      );
 
     default:
       return animals;

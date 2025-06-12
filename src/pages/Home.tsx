@@ -1,4 +1,3 @@
-import { MdArrowForward } from "react-icons/md";
 import Button from "../components/Button";
 import "./scss/Home.scss";
 

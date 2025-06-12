@@ -10,6 +10,7 @@ interface AnimalCardProps {
 
 const AnimalCard = ({ animal }: AnimalCardProps) => {
   const hours = hoursSinceFed(animal.lastFed);
+  const isFed = hours < 5;
   let warning = "";
   let warningClass = "";
   if (hours >= 5) {
@@ -37,8 +38,8 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
           <p>
             <strong>Beskrivning:</strong> {animal.shortDescription}
           </p>
-          <p className={`animal-status ${animal.isFed ? "Fed" : "Hungrig"}`}>
-            {animal.isFed ? "Mätt" : "Hungrig"}
+          <p className={`animal-status ${isFed ? "Fed" : "Hungrig"}`}>
+            {isFed ? "Mätt" : "Hungrig"}
           </p>
           <p className="animal-fed">
             <FaRegCalendarAlt style={{ marginRight: "0.4em" }} />
