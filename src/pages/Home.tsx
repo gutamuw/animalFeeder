@@ -1,4 +1,5 @@
 import Button from "../components/Button";
+import Router from "../routes/Routes";
 import "./scss/Home.scss";
 
 const Home = () => {
@@ -15,7 +16,12 @@ const Home = () => {
             beatae vero aut, amet saepe doloremque numquam quam dolores quia
             assumenda unde.
           </p>
-          <Button variant="secondary" onClick={() => {}}>
+          <Button
+            variant="secondary"
+            onClick={() => {
+              Router.navigate("/animals");
+            }}
+          >
             Se alla djur
           </Button>
         </div>

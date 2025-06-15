@@ -17,13 +17,13 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
     warning = "Mata genast!";
     warningClass = "urgent";
   } else if (hours >= 3) {
-    warning = "Varning: Behöver matas snart!";
+    warning = "Mata snart!";
     warningClass = "soon";
   }
 
   return (
     <Link to={`/animals/${animal.id}`} className="animal-link">
-      <li className="animal-item">
+      <div className="animal-item">
         <img
           src={animal.imageUrl}
           alt={animal.name}
@@ -38,7 +38,7 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
           <p>
             <strong>Beskrivning:</strong> {animal.shortDescription}
           </p>
-          <p className={`animal-status ${isFed ? "Fed" : "Hungrig"}`}>
+          <p className={`animal-status ${isFed ? "fed" : "hungry"}`}>
             {isFed ? "Mätt" : "Hungrig"}
           </p>
           <p className="animal-fed">
@@ -56,7 +56,7 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
             <p className={`animal-warning ${warningClass}`}>{warning}</p>
           )}
         </div>
-      </li>
+      </div>
     </Link>
   );
 };

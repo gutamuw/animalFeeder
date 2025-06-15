@@ -3,6 +3,7 @@ import { AnimalsContext } from "../contexts/AnimalsContext";
 import "./scss/Animals.scss";
 import AnimalCard from "../components/AnimalCard";
 import AnimalSearch from "../components/AnimalSearch";
+import { motion } from "framer-motion";
 
 const Animals = () => {
   const { animals } = useContext(AnimalsContext);
@@ -21,8 +22,16 @@ const Animals = () => {
         <AnimalSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </section>
       <ul className="animals-list">
-        {filteredAnimals.map((animal) => (
-          <AnimalCard key={animal.id} animal={animal} />
+        {filteredAnimals.map((animal, i) => (
+          <motion.li
+            key={animal.id}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08, duration: 0.4 }}
+            style={{ listStyle: "none" }}
+          >
+            <AnimalCard animal={animal} />
+          </motion.li>
         ))}
       </ul>
     </div>
