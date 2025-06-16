@@ -38,8 +38,20 @@ const AnimalView = () => {
       <div className="animal-view-header">
         <div className="inverted-radius-notch"></div>
         <div className="inverted-radius-notch-2"></div>
-        <h1>{animal.name}</h1>
-        <p>Här kan du se detaljer om {animal.name}.</p>
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          {animal.name}
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
+          Här kan du se detaljer om {animal.name}.
+        </motion.p>
         <Link to="/animals" className="animal-view-back-link">
           <Button
             variant="secondary"
@@ -50,7 +62,12 @@ const AnimalView = () => {
           </Button>
         </Link>
       </div>
-      <div className="animal-view two-column">
+      <motion.div
+        className="animal-view two-column"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4 }}
+      >
         <div className="animal-view-img-col">
           <img src={animal.imageUrl} className="animal-view-img" />
         </div>
@@ -85,7 +102,7 @@ const AnimalView = () => {
             Mata {animal.name}
           </Button>
         </div>
-      </div>
+      </motion.div>
       <AnimatePresence>
         {showLoader && (
           <div className="animal-popup-overlay">

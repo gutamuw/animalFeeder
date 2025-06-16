@@ -40,14 +40,14 @@ button.primary,
   &:hover,
   &:focus {
     background: #32ac64;
-    color: #fff;
+    color: #f9f9f9;
     box-shadow: 0 4px 16px rgba(44, 62, 39, 0.18);
   }
 }
 
 button.secondary,
 .feed-btn.secondary {
-  background: #fff;
+  background: #f9f9f9;
   color: #2c3e50;
   box-shadow: 0 2px 8px rgba(44, 62, 39, 0.08);
 

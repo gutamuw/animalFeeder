@@ -18,7 +18,13 @@ const Animals = () => {
   return (
     <div className="wrapper">
       <section className="animals-hero">
-        <h1>Alla våra djur</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
+          Alla våra djur
+        </motion.h1>
         <AnimalSearch searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </section>
       <ul className="animals-list">

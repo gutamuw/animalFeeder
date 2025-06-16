@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import "./scss/AnimalSearch.scss";
 import { FaSearch } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface AnimalSearchProps {
   searchTerm: string;
@@ -16,7 +17,14 @@ const AnimalSearch = ({ searchTerm, setSearchTerm }: AnimalSearchProps) => {
   };
 
   return (
-    <form action="" className="animal-search" onSubmit={handleSubmit}>
+    <motion.form
+      action=""
+      className="animal-search"
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4 }}
+    >
       <div className="search-input-wrapper">
         <input
           type="text"
@@ -29,7 +37,7 @@ const AnimalSearch = ({ searchTerm, setSearchTerm }: AnimalSearchProps) => {
           <FaSearch />
         </button>
       </div>
-    </form>
+    </motion.form>
   );
 };
 

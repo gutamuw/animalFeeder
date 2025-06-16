@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Button from "../components/Button";
 import Router from "../routes/Routes";
 import "./scss/Home.scss";
@@ -7,27 +8,50 @@ const Home = () => {
     <section className="hero-section wrapper">
       <div className="hero-bg">
         <div className="hero-content">
-          <h1>
+          <motion.h1
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
             Mata djur & <br></br> mata dem igen...
-          </h1>
-          <p>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus
             facere, et impedit animi voluptas adipisci quisquam libero placeat
             beatae vero aut, amet saepe doloremque numquam quam dolores quia
             assumenda unde.
-          </p>
-          <Button
-            variant="secondary"
-            onClick={() => {
-              Router.navigate("/animals");
-            }}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
           >
-            Se alla djur
-          </Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                Router.navigate("/animals");
+              }}
+            >
+              Se alla djur
+            </Button>
+          </motion.div>
         </div>
 
         <div className="hero-columns">
-          <div className="hero-column">
+          <motion.div
+            className="hero-column"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.6,
+              duration: 0.4,
+              type: "spring",
+              stiffness: 100,
+            }}
+          >
             <img
               src="https://images.pexels.com/photos/50577/hedgehog-animal-baby-cute-50577.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
               alt=""
@@ -39,11 +63,21 @@ const Home = () => {
                 det ska vara!
               </p>
             </div>
-          </div>
-          <div className="hero-column">
+          </motion.div>
+          <motion.div
+            className="hero-column"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.8,
+              duration: 0.4,
+              type: "spring",
+              stiffness: 100,
+            }}
+          >
             <h2>2m+</h2>
             <p>Användare</p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
