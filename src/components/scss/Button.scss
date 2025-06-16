@@ -1,8 +1,4 @@
-button.primary,
-.feed-btn.primary,
-button.secondary,
-.feed-btn.secondary {
-  margin-top: 1.5rem;
+.feed-btn {
   padding: 0.7rem 1.2rem 0.7rem 2rem;
   border-radius: 25px;
   font-weight: 700;
@@ -12,6 +8,20 @@ button.secondary,
   transition: background 0.2s, color 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(44, 62, 39, 0.12);
   font-family: "poppins", sans-serif;
+
+  &.primary,
+  &.secondary {
+    margin-top: 1.5rem;
+  }
+
+  &.icon-after {
+    padding-left: 1.6rem;
+    padding-right: 1rem;
+  }
+  &.icon-before {
+    padding-left: 1rem;
+    padding-right: 1.6rem;
+  }
 
   svg {
     width: 1.2rem;

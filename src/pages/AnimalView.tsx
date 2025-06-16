@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { AnimalsContext } from "../contexts/AnimalsContext";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import { ActionTypes } from "../reducers/animalReducer";
 import "./scss/AnimalView.scss";
 import Button from "../components/Button";
@@ -36,8 +36,19 @@ const AnimalView = () => {
   return (
     <div className="wrapper">
       <div className="animal-view-header">
+        <div className="inverted-radius-notch"></div>
+        <div className="inverted-radius-notch-2"></div>
         <h1>{animal.name}</h1>
         <p>Här kan du se detaljer om {animal.name}.</p>
+        <Link to="/animals" className="animal-view-back-link">
+          <Button
+            variant="secondary"
+            iconPosition="before"
+            iconDirection="backward"
+          >
+            Gå tillbaka
+          </Button>
+        </Link>
       </div>
       <div className="animal-view two-column">
         <div className="animal-view-img-col">
