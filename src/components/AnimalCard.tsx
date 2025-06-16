@@ -2,7 +2,7 @@ import { hoursSinceFed } from "../utils/hoursSinceFed";
 import type { IAnimal } from "../models/IAnimal";
 import { Link } from "react-router";
 import "./scss/AnimalCard.scss";
-import { FaRegCalendarAlt } from "react-icons/fa";
+import { FaUtensils } from "react-icons/fa";
 
 interface AnimalCardProps {
   animal: IAnimal;
@@ -42,7 +42,7 @@ const AnimalCard = ({ animal }: AnimalCardProps) => {
             {isFed ? "Mätt" : "Hungrig"}
           </p>
           <p className="animal-fed">
-            <FaRegCalendarAlt style={{ marginRight: "0.4em" }} />
+            <FaUtensils style={{ marginRight: "0.4em" }} />
             {new Date(animal.lastFed).toLocaleString("sv-SE", {
               year: "numeric",
               month: "2-digit",
