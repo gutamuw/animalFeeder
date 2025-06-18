@@ -17,6 +17,9 @@
     .hero-content {
       max-width: 600px;
       margin-top: 6rem;
+      @media screen and (max-height: 865px) {
+            margin-top: 4.5rem;
+          }
       h1 {
         color: #f9f9f9;
         font-size: 4rem;
@@ -59,9 +62,15 @@
         img {
           width: 100%;
           height: auto;
-          max-width: 400px;
+          max-width: 270px;
           border-radius: 16px;
           box-shadow: 0 2px 8px rgba(44, 62, 39, 0.12);
+
+          @media screen and (max-height: 900px) {
+            max-height: 150px;
+            object-fit: cover;
+          }
+
         }
       }
       .hero-column:last-child {
@@ -76,6 +85,7 @@
         border-radius: 16px;
         padding: 1rem;
       }
+      
     }
   }
 }
