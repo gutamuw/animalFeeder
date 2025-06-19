@@ -10,16 +10,9 @@ interface AnimalCardProps {
 
 const AnimalCard = ({ animal }: AnimalCardProps) => {
   const hours = hoursSinceFed(animal.lastFed);
-  const isFed = hours < 5;
-  let warning = "";
-  let warningClass = "";
-  if (hours >= 5) {
-    warning = "Mata genast!";
-    warningClass = "urgent";
-  } else if (hours >= 3) {
-    warning = "Mata snart!";
-    warningClass = "soon";
-  }
+  const isFed = hours < 4;
+  const warning = hours >= 4 ? "Mata genast!" : hours >= 3 ? "Mata snart!" : "";
+  const warningClass = hours >= 4 ? "urgent" : hours >= 3 ? "soon" : "";
 
   return (
     <Link to={`/animals/${animal.id}`} className="animal-link">

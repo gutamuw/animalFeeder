@@ -9,15 +9,30 @@ function App() {
   const [animals, dispatch] = useReducer(AnimalReducer, []);
 
   useEffect(() => {
-    const getData = async () => {
-      const data = await getAnimals();
+    const ls = localStorage.getItem("animals");
+    if (ls) {
       dispatch({
         type: ActionTypes.LOADED,
-        payload: JSON.stringify(data),
+        payload: ls,
       });
-    };
-    getData();
+      return;
+    } else {
+      const getData = async () => {
+        const data = await getAnimals();
+        dispatch({
+          type: ActionTypes.LOADED,
+          payload: JSON.stringify(data),
+        });
+      };
+      getData();
+    }
   }, []);
+
+  useEffect(() => {
+    if (animals.length > 0) {
+      localStorage.setItem("animals", JSON.stringify(animals));
+    }
+  }, [animals]);
 
   return (
     <AnimalsContext.Provider value={{ animals, dispatch }}>

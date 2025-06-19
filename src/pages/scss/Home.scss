@@ -18,8 +18,8 @@
       max-width: 600px;
       margin-top: 6rem;
       @media screen and (max-height: 865px) {
-            margin-top: 4.5rem;
-          }
+        margin-top: 4.5rem;
+      }
       h1 {
         color: #f9f9f9;
         font-size: 4rem;
@@ -70,7 +70,6 @@
             max-height: 150px;
             object-fit: cover;
           }
-
         }
       }
       .hero-column:last-child {
@@ -85,7 +84,6 @@
         border-radius: 16px;
         padding: 1rem;
       }
-      
     }
   }
 }

@@ -19,7 +19,7 @@ const AnimalView = () => {
   if (!animal) return <div>Animal not found</div>;
 
   const hours = hoursSinceFed(animal.lastFed);
-  const isFed = hours < 5;
+  const isFed = hours < 4;
 
   const handleFeed = () => {
     dispatch({
@@ -69,7 +69,14 @@ const AnimalView = () => {
         transition={{ duration: 0.4 }}
       >
         <div className="animal-view-img-col">
-          <img src={animal.imageUrl} className="animal-view-img" />
+          <img
+            src={animal.imageUrl}
+            className="animal-view-img"
+            onError={(e) => {
+              e.currentTarget.src =
+                "https://skuss.se/wp-content/uploads/2019/04/Bild-saknas-9.jpg";
+            }}
+          />
         </div>
         <div className="animal-view-content-col" tabIndex={0}>
           <div className="animal-header-row">
