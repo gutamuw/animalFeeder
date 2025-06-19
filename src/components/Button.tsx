@@ -1,5 +1,6 @@
 import { MdArrowForward, MdArrowBack } from "react-icons/md";
 import "./scss/Button.scss";
+import { motion } from "framer-motion";
 
 interface ButtonProps {
   onClick?: () => void;
@@ -21,7 +22,8 @@ const Button = ({
   const Icon = iconDirection === "backward" ? MdArrowBack : MdArrowForward;
 
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.95 }}
       onClick={onClick}
       className={
         disabled
@@ -33,7 +35,7 @@ const Button = ({
       {iconPosition === "before" && <Icon style={{ marginRight: 6 }} />}
       {children}
       {iconPosition === "after" && <Icon style={{ marginLeft: 6 }} />}
-    </button>
+    </motion.button>
   );
 };
 
