@@ -15,8 +15,8 @@ A simple React web app that fetches animals from an API and shows if they are hu
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/animal-hunger-monitor.git
-cd animal-hunger-monitor
+git https://github.com/gutamuw/animalFeeder.git
+cd animalFeeder
 ```
 
 ### 2. Install dependencies
